@@ -9,7 +9,7 @@ module.exports = merge(commonConfig, {
   mode: 'development',
   devtool: 'inline-source-map',
   devServer: {
-    port: 8080,
+    port: 8081,
     publicPath: '/',
     hot: true,
     open: true,
@@ -18,7 +18,7 @@ module.exports = merge(commonConfig, {
     rules: [
       {
         test: /\.(js|jsx)$/,
-        include: source,
+        include: '../src',
         exclude: /node_modules/,
         use: [
           {

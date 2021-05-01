@@ -2,7 +2,7 @@ const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 
 const source = path.resolve(__dirname, '../src');
-const outputPath = path.resolve(__dirname, '../dist');
+const outputPath = path.resolve(__dirname, '../build');
 const entryPath = path.resolve(__dirname, '../src/index.jsx');
 
 module.exports = {
@@ -64,7 +64,10 @@ module.exports = {
   plugins: [
     new HTMLWebpackPlugin({
       inject: 'body',
-      template: './src/index.html',
+      template: '../src/index.html',
     }),
   ],
+  stats: {
+    children: true,
+  }
 };
