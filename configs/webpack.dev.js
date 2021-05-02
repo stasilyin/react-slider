@@ -18,7 +18,7 @@ module.exports = merge(commonConfig, {
     rules: [
       {
         test: /\.(js|jsx)$/,
-        include: '../src',
+        include: source,
         exclude: /node_modules/,
         use: [
           {

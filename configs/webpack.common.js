@@ -64,7 +64,7 @@ module.exports = {
   plugins: [
     new HTMLWebpackPlugin({
       inject: 'body',
-      template: '../src/index.html',
+      template: './src/index.html',
     }),
   ],
   stats: {
