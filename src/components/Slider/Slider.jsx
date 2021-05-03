@@ -33,7 +33,15 @@ const SliderWrapper = styled.div`
 function Slider({
   children,
 }) {
-
+  return (
+    <SliderWrapper className='SliderWrapper'>
+      <SliderStyles ref={sliderRef} className='SliderStyles'>
+        <div>
+          <Slide />
+        </div>
+      </SliderStyles>
+    </SliderWrapper>
+  );
 }
 
 export default Slider;

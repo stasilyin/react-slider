@@ -24,7 +24,7 @@ function Slide({
   const slideRef = useRef('slide');
 
   const onMouseDown = () => {
-    if (scaleOnDrag) slideRef.current.style.transform = 'scale(0.9)';
+    if (scaleOnDrag) slideRef.current.style.transform = 'scale(0.8)';
   };
 
   const onMouseUp = () => {
