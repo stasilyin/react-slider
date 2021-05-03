@@ -15,20 +15,55 @@ const SlideWrapper = styled.div`
     object-position: center;
   }
 `;
-function Slide({ child }) {
+function Slide({
+  child,
+  sliderWidth,
+  sliderHeight,
+  scaleOnDrag = false,
+}) {
   const slideRef = useRef('slide');
 
+  const onMouseDown = () => {
+    if (scaleOnDrag) slideRef.current.style.transform = 'scale(0.9)';
+  };
+
+  const onMouseUp = () => {
+    if (scaleOnDrag) slideRef.current.style.transform = 'scale(1)';
+  };
+
   return (
-    <SlideWrapper ref={slideRef}>
-      <div>
+    <SlideWrapper
+      ref={slideRef}
+      sliderWidth={`${sliderWidth}px`}
+      sliderHeight={`${sliderHeight}px`}
+    >
+      <div
+        onMouseDown={onMouseDown}
+        onMouseUp={onMouseUp}
+        onTouchStart={onMouseDown}
+        onTouchEnd={onMouseUp}
+        onMouseLeave={onMouseUp}
+        onDragStart={(e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          return false;
+        }}
+      >
         { child }
       </div>
     </SlideWrapper>
   );
 }
 
-Slide.PropTypes = {
+Slide.defaultProps = {
+  scaleOnDrag: false,
+};
+
+Slide.propTypes = {
   child: PropTypes.element.isRequired,
+  sliderWidth: PropTypes.number.isRequired,
+  sliderHeight: PropTypes.number.isRequired,
+  scaleOnDrag: PropTypes.bool,
 };
 
 export default Slide;
