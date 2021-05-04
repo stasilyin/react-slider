@@ -26,7 +26,9 @@ Run `npm start` to intialize and run the webpack development server. Navigate to
 
 ## Props
 
+```bash
 activeIndex - start slide
 threshHold - the distance in pixels is needed to move the current slide, before turning to the next
 transition - animation time in seconds
 scaleOnDrag - animation when clicking / tapping on a slide true / false
+```
