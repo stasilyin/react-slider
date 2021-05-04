@@ -24,6 +24,12 @@ npm install
 
 Run `npm start` to intialize and run the webpack development server. Navigate to [http://localhost:8081/](http://localhost:8081). The app will automatically reload if you change any of the source files.
 
+## Build the app
+
+```bash
+npm build
+```
+
 ## Props
 
 ```bash
