@@ -24,5 +24,6 @@ module.exports = {
     'func-names': 0,
     'no-use-before-define': 'warn',
     'react/no-array-index-key': 0,
+    'no-shadow': 0,
   },
 };

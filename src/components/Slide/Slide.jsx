@@ -5,12 +5,18 @@ import styled from 'styled-components';
 const SlideWrapper = styled.div`
   transition: transform 0.5s ease-out;
   div {
+    background-color: #18FF85;
+    padding: 1rem;
+    height: 100%;
+    width: ${(props) => props.sliderWidth};
     display: flex;
     align-items: center;
     justify-content: center;
     user-select: none;
   }
   img {
+    max-width: 100%;
+    max-height: 100%;
     object-fit: cover;
     object-position: center;
   }
@@ -18,7 +24,6 @@ const SlideWrapper = styled.div`
 function Slide({
   child,
   sliderWidth,
-  sliderHeight,
   scaleOnDrag = false,
 }) {
   const slideRef = useRef('slide');
@@ -35,7 +40,6 @@ function Slide({
     <SlideWrapper
       ref={slideRef}
       sliderWidth={`${sliderWidth}px`}
-      sliderHeight={`${sliderHeight}px`}
     >
       <div
         onMouseDown={onMouseDown}
@@ -62,7 +66,6 @@ Slide.defaultProps = {
 Slide.propTypes = {
   child: PropTypes.element.isRequired,
   sliderWidth: PropTypes.number.isRequired,
-  sliderHeight: PropTypes.number.isRequired,
   scaleOnDrag: PropTypes.bool,
 };
 

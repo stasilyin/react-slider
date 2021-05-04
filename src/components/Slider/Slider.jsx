@@ -57,6 +57,10 @@ function Slider({
     (sliderRef.current.style.transition = 'none');
   };
 
+  function setSliderPosition() {
+    sliderRef.current.style.transform = `translateX(${currentTranslate.current}px)`;
+  }
+
   const setPositionByIndex = useCallback(
     (w = dimensions.width) => {
       currentTranslate.current = currentIndex.current * -w;
@@ -130,6 +134,11 @@ function Slider({
     };
   }, [children.length, setPositionByIndex, onSlideComplete, onSlideStart]);
 
+  function animation() {
+    setSliderPosition();
+    if (dragging.current) requestAnimationFrame(animation);
+  }
+
   function touchStart(index) {
     return function (event) {
       transitionOn();
@@ -170,15 +179,6 @@ function Slider({
     sliderRef.current.style.cursor = 'grab';
 
     if (onSlideComplete) onSlideComplete(currentIndex.current);
-  }
-
-  function setSliderPosition() {
-    sliderRef.current.style.transform = `translateX(${currentTranslate.current}px)`;
-  }
-
-  function animation() {
-    setSliderPosition();
-    if (dragging.current) requestAnimationFrame(animation);
   }
 
   return (

@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 import Slider from '../Slider/Slider';
 
 import dataForSlider from '../../constants/dataForSlider';
 
 const AppStyles = styled.main`
-  height: 100vh;
   width: 100vw;
 `;
 
@@ -31,7 +30,7 @@ function App() {
           activeIndex={index}
           threshHold={100}
           transition={0.3}
-          scaleOnDrag={true}
+          scaleOnDrag
         >
           {dataForSlider.map(({ url, title }, index) => (
             <img src={url} key={index} alt={title} />
