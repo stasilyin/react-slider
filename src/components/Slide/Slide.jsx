@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components/macro';
+import styled from 'styled-components';
 
 const SlideWrapper = styled.div`
   transition: transform 0.5s ease-out;

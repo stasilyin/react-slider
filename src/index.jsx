@@ -1,9 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import App from './components/App/App';
 
-ReactDOM.render(
-  <React.StrictMode>
-
-  </React.StrictMode>,
-  document.getElementById('root'),
-);
+ReactDOM.render(<App />, document.getElementById('root'));

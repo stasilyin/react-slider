@@ -7,5 +7,5 @@ module.exports = merge(commonConfig, {
   mode: 'production',
   plugins: [
     new CleanWebpackPlugin(),
-  ]
+  ],
 });

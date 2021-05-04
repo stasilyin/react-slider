@@ -23,5 +23,6 @@ module.exports = {
     'react/require-default-props': 0,
     'func-names': 0,
     'no-use-before-define': 'warn',
+    'react/no-array-index-key': 0,
   },
 };
