@@ -9,11 +9,22 @@ const AppStyles = styled.main`
   width: 100vw;
 `;
 
+const GlobalStyles = createGlobalStyle`
+  * {
+    box-sizing: border-box;
+  }
+  html,body {
+    padding: 0;
+    margin: 0;
+  }
+`;
+
 function App() {
   const [index, setIndex] = useState(1);
 
   return (
     <React.StrictMode>
+      <GlobalStyles />
       <AppStyles>
         <Slider
           onSlideComplete={setIndex}
