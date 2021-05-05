@@ -38,3 +38,5 @@ threshHold - the distance in pixels is needed to move the current slide, before 
 transition - animation time in seconds
 scaleOnDrag - animation when clicking / tapping on a slide true / false
 ```
+
+You can flip through slides with arrows on the keyboard or swipes
